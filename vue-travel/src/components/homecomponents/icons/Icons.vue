@@ -91,6 +91,8 @@ export default {
     padding-bottom: 50%
   .icons >>> .swiper-pagination-bullet-active
     background: $themecolor
+  .icons
+    margin-top .1rem
   .icon
     overflow: hidden
     width: 25%
