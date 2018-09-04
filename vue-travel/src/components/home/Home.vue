@@ -11,7 +11,7 @@
 
 <script>
 
-import HHeader from 'components/homecomponents/h-header'
+import HHeader from 'components/homecomponents/Header'
 import HSwiper from 'components/homecomponents/Swiper'
 import HIcons from 'components/homecomponents/Icons'
 import HomeRecommend from 'components/homecomponents/Recommend'
