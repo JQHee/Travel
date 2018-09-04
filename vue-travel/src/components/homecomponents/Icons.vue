@@ -6,7 +6,7 @@
       <swiper-slide  v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-image">
-            <img class="icon-image-content" :src="item.imageUrl">
+            <img class="icon-image-content" :src="item.imgUrl">
           </div>
           <p class="icon-des">{{ item.desc }}</p>
         </div>
@@ -20,58 +20,23 @@
 <script>
 export default {
   name: 'Icons',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: false,
         autoplay: false
-      },
-      iconsList: [
-        {
-          id: '0001',
-          imageUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票景点门票景点门票'
-        }, {
-          id: '0002',
-          imageUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        }, {
-          id: '0003',
-          imageUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        }, {
-          id: '0004',
-          imageUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        }, {
-          id: '0005',
-          imageUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        }, {
-          id: '0006',
-          imageUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        }, {
-          id: '0007',
-          imageUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        }, {
-          id: '0008',
-          imageUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        }, {
-          id: '0009',
-          imageUrl: 'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-          desc: '自然风光'
-        }]
+      }
     }
   },
   // 计算属性
   computed: {
     pages () {
       const pages = []
-      this.iconsList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
