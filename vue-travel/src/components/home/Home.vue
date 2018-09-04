@@ -2,7 +2,7 @@
   <div>
     <h-header></h-header>
     <h-swiper></h-swiper>
-    <div>test</div>
+    <h-icons></h-icons>
   </div>
 
 </template>
@@ -11,12 +11,14 @@
 
 import HHeader from 'components/h-header/h-header'
 import HSwiper from 'components/swiper/Swiper'
+import HIcons from 'components/icons/Icons'
 
 export default {
   name: 'Home',
   components: {
     HSwiper,
-    HHeader
+    HHeader,
+    HIcons
   }
 }
 </script>
