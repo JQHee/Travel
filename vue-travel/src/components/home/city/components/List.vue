@@ -4,49 +4,26 @@
       <div class="area">
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
-          <div class="button-wrapper">
+          <div class="button-wrapper" >
             <div class="button">南宁市</div>
           </div>
         </div>
       </div>
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
-        <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">南宁市</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">南宁市</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">南宁市</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">南宁市</div>
+        <div class="button-list" >
+          <div class="button-wrapper"
+               v-for="item of hot"
+               :key="item.id"
+          >
+            <div class="button">{{ item.name }}</div>
           </div>
         </div>
       </div>
       <div class="list-item">
-        <div class="item">
-          <div class="title border-topbottom">A</div>
-          <div class="item-name border-bottom">南宁市</div>
-          <div class="item-name border-bottom">南宁市</div>
-          <div class="item-name border-bottom">南宁市</div>
-          <div class="item-name border-bottom">南宁市</div>
-        </div>
-        <div class="item">
-          <div class="title border-topbottom">B</div>
-          <div class="item-name border-bottom">南宁市</div>
-          <div class="item-name border-bottom">南宁市</div>
-          <div class="item-name border-bottom">南宁市</div>
-          <div class="item-name border-bottom">南宁市</div>
-        </div>
-        <div class="item">
-          <div class="title border-topbottom">C</div>
-          <div class="item-name border-bottom">南宁市</div>
-          <div class="item-name border-bottom">南宁市</div>
-          <div class="item-name border-bottom">南宁市</div>
-          <div class="item-name border-bottom">南宁市</div>
+        <div class="item" v-for="(item, key) of cities" :key="key">
+          <div class="title border-topbottom" > {{ key }} </div>
+          <div class="item-name border-bottom" v-for="innerItem of item" :key="innerItem.id">{{ innerItem.name }}</div>
         </div>
       </div>
     </div>
@@ -57,6 +34,10 @@
 import BScroll from 'better-scroll'
 export default {
   name: 'CityList',
+  props: {
+    cities: Object,
+    hot: Array
+  },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)
   }
@@ -90,7 +71,6 @@ export default {
       overflow hidden
       padding .1rem .6rem .1rem .1rem
       .button-wrapper
-        overflow hidden
         float left
         width 33.33%
         .button

@@ -43,7 +43,7 @@ export default {
     getHomeInSuccess (res) {
       console.log(res)
       res = res.data
-      if (!res.res && res.data) {
+      if (res.ret && res.data) {
         const data = res.data
         this.swiperList = data.swiperList
         this.iconList = data.iconList
