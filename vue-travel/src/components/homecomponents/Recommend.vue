@@ -6,7 +6,7 @@
         <div class="item border-bottom">
           <img class="item-img" :src="item.imageUrl"/>
           <div class="item-info">
-            <p class="item-title">{{ item.title }}}</p>
+            <p class="item-title">{{ item.title }}</p>
             <p class="item-desc">{{ item.desc }}</p>
             <button class="item-button">查看详情</button>
           </div>
