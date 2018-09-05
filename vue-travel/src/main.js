@@ -15,6 +15,7 @@ Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
 FastClick.attach(document.body)
 
+// 第三方框架： https://github.com/vuejs/awesome-vue#pull-to-refresh
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
