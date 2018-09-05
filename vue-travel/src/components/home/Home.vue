@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h-header :city="city"></h-header>
+    <h-header></h-header>
     <h-swiper :list="swiperList"></h-swiper>
     <h-icons :list="iconList"></h-icons>
     <home-recommend :list="recommendList"></home-recommend>
@@ -29,7 +29,6 @@ export default {
   },
   data () {
     return {
-      city: '',
       iconList: [],
       swiperList: [],
       recommendList: [],
@@ -49,12 +48,15 @@ export default {
         this.iconList = data.iconList
         this.recommendList = data.recommendList
         this.weekendList = data.weekendList
-        this.city = data.city
       }
     }
   },
   mounted () {
     this.getHomeInfo()
+  },
+  activated () {
+    // 使用keep-alive之后，多的生命周期函数
+    // 城市切换后在这做网络请求
   }
 }
 </script>

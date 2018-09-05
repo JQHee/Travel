@@ -15,10 +15,13 @@
 </template>
 
 <script>
+// 把state直接映射到计算属性中
+import { mapState, mapGetters } from 'vuex'
 export default {
   name: 'h-header',
-  props: {
-    city: String
+  computed: {
+    ...mapState(['city']),
+    ...mapGetters(['doubleCity'])
   }
 }
 </script>
@@ -44,7 +47,9 @@ export default {
       border-radius: .1rem
       padding-left: .1rem
     .header-right
-      width: 1.24rem
+      overflow hidden
+      min-width: 1.04rem
+      padding 0 .1rem
       float: right
       text-align: center
       color #fff
